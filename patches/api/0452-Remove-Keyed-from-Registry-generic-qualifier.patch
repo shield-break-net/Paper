@@ -1,0 +1,46 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Jake Potrebic <jake.m.potrebic@gmail.com>
+Date: Wed, 20 Dec 2023 02:03:10 -0800
+Subject: [PATCH] Remove Keyed from Registry generic qualifier
+
+Keyed is no longer viable for future/current registry types.
+
+diff --git a/src/main/java/org/bukkit/Registry.java b/src/main/java/org/bukkit/Registry.java
+index 57e97b424cebd205cb260556ab9fb9eb2ff1eebc..94668b0643b6e2a1566e307573771ffb2bc94f8c 100644
+--- a/src/main/java/org/bukkit/Registry.java
++++ b/src/main/java/org/bukkit/Registry.java
+@@ -37,7 +37,7 @@ import org.jetbrains.annotations.Nullable;
+  *
+  * @param <T> type of item in the registry
+  */
+-public interface Registry<T extends Keyed> extends Iterable<T> {
++public interface Registry<T> extends Iterable<T> { // Paper - improve Registry
+ 
+     /**
+      * Server advancements.
+@@ -318,7 +318,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
+      * @param value the value to get the key of in this registry
+      * @return the key for the value
+      * @throws java.util.NoSuchElementException if the value doesn't exist in this registry
+-     * @see #getKey(Keyed)
++     * @see #getKey(Object)
+      */
+     default @NotNull NamespacedKey getKeyOrThrow(final @NotNull T value) {
+         Preconditions.checkArgument(value != null, "value cannot be null");
+@@ -338,13 +338,12 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
+      *
+      * @param value the value to get the key of in this registry
+      * @return the key for the value or null if not in the registry
+-     * @see #getKeyOrThrow(Keyed)
++     * @see #getKeyOrThrow(Object)
+      */
+     default @Nullable NamespacedKey getKey(final @NotNull T value) {
+         Preconditions.checkArgument(value != null, "value cannot be null");
+-        //noinspection ConstantValue (it might not be in the future...)
+-        if (value instanceof Keyed) {
+-            return value.getKey();
++        if (value instanceof final Keyed keyed) {
++            return keyed.getKey();
+         }
+         return null;
+     }
