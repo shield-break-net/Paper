@@ -12,10 +12,10 @@ or DEFAULT since data was not stored.
 Co-authored-by: Aurora <aurora@relanet.eu>
 
 diff --git a/src/main/java/org/bukkit/entity/Entity.java b/src/main/java/org/bukkit/entity/Entity.java
-index bdc547298fd29fe55016a17ff1be0d51619c0e2d..3117bf9d61b507175cfb673095763a5d6bc802ba 100644
+index a0ed358156f9cbeb9e3cbb910ac17785edd30152..8a01590cc0ee7517dc4c2a52e95aad2680610a43 100644
 --- a/src/main/java/org/bukkit/entity/Entity.java
 +++ b/src/main/java/org/bukkit/entity/Entity.java
-@@ -839,5 +839,11 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
+@@ -836,5 +836,11 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
          // TODO remove impl here
          return getLocation().getChunk();
      }

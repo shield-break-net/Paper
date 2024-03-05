@@ -432,10 +432,10 @@ index 0000000000000000000000000000000000000000..9e90c3df567a65b48a0b9341f784eb90
 +    }
 +}
 diff --git a/src/main/java/org/bukkit/entity/Player.java b/src/main/java/org/bukkit/entity/Player.java
-index 602d8b81135eba0481280c887f44f1c1855044e1..fdde0f82531fba370327ff71f59c2c4722d42df2 100644
+index 0ffe5812e2d59d3fbf56061eea0a2f391cde6758..ba58936116ce1e2e805a03251bb19484058e4f0f 100644
 --- a/src/main/java/org/bukkit/entity/Player.java
 +++ b/src/main/java/org/bukkit/entity/Player.java
-@@ -1137,6 +1137,131 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
+@@ -1206,6 +1206,131 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      public default void sendMessage(net.md_5.bungee.api.ChatMessageType position, net.md_5.bungee.api.chat.BaseComponent... components) {
          spigot().sendMessage(position, components);
      }

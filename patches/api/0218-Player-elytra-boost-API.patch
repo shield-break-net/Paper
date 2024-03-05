@@ -5,10 +5,10 @@ Subject: [PATCH] Player elytra boost API
 
 
 diff --git a/src/main/java/org/bukkit/entity/Player.java b/src/main/java/org/bukkit/entity/Player.java
-index 5311c533883e75bb8bf6017f6404dc3d02f1ea7a..7bd0cf4ce7d79a69bbb47129d6a3917a54dd9a5a 100644
+index 219a819731ec081fea4fe3ac75e617f8cd6afbbf..f52f35902cc6a8af5ee60cf815caef7a43372158 100644
 --- a/src/main/java/org/bukkit/entity/Player.java
 +++ b/src/main/java/org/bukkit/entity/Player.java
-@@ -3108,6 +3108,25 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
+@@ -3245,6 +3245,25 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      <T> @NotNull T getClientOption(com.destroystokyo.paper.@NotNull ClientOption<T> option);
      // Paper end - client option API
  

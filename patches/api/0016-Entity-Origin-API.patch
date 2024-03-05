@@ -5,10 +5,10 @@ Subject: [PATCH] Entity Origin API
 
 
 diff --git a/src/main/java/org/bukkit/entity/Entity.java b/src/main/java/org/bukkit/entity/Entity.java
-index 978431fd88cfb7d42fcdea8c904633df5c64daed..24341516dd7d358b391f5e895cd837b5a10a8802 100644
+index 474765f40801a766c853018ea6e1adcd010375d2..b0967614bfdba06b5e11c910186aa66ac7e2d503 100644
 --- a/src/main/java/org/bukkit/entity/Entity.java
 +++ b/src/main/java/org/bukkit/entity/Entity.java
-@@ -783,5 +783,15 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
+@@ -780,5 +780,15 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      default net.kyori.adventure.text.event.HoverEvent<net.kyori.adventure.text.event.HoverEvent.ShowEntity> asHoverEvent(final @NotNull java.util.function.UnaryOperator<net.kyori.adventure.text.event.HoverEvent.ShowEntity> op) {
          return net.kyori.adventure.text.event.HoverEvent.showEntity(op.apply(net.kyori.adventure.text.event.HoverEvent.ShowEntity.of(this.getType().getKey(), this.getUniqueId(), this.customName())));
      }
